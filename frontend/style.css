@@ -1,0 +1,188 @@
+/* --- Variáveis do Tema Neon --- */
+:root {
+    --bg-darkest: #050a14;  /* Fundo principal quase preto */
+    --bg-card: #0d1526;     /* Fundo dos cards um pouco mais claro */
+    
+    --neon-blue: #00f7ff;   /* Azul Ciano Elétrico */
+    --neon-pink: #ff00e6;   /* Rosa Neon */
+    --neon-gold: #ffd700;   /* Dourado Neon */
+    
+    --text-light: #e1f5fe;  /* Texto claro azulado */
+    --text-dim: #8a9eb5;    /* Texto secundário mais apagado */
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif; /* Fonte mais técnica/futurista */
+    background: linear-gradient(to bottom, var(--bg-darkest), #000000);
+    margin: 0;
+    color: var(--text-light);
+    min-height: 100vh;
+}
+
+/* --- Header Brilhante --- */
+header {
+    background: #080f1f;
+    padding: 25px 0;
+    /* Borda inferior brilhante */
+    border-bottom: 2px solid var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 247, 255, 0.2);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.header-logo {
+    height: 80px;
+    width: auto;
+    /* Faz o logo brilhar um pouco */
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
+}
+
+.header-text h1 {
+    font-family: 'Russo One', sans-serif;
+    margin: 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Efeito de texto neon */
+.neon-text {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+
+.header-text p {
+    color: var(--neon-blue);
+    margin: 5px 0 0 0;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    opacity: 0.8;
+}
+
+/* --- Galeria --- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* --- Card Futurista --- */
+.card {
+    background: var(--bg-card);
+    border-radius: 15px;
+    overflow: hidden;
+    /* Borda fina e sutil inicialmente */
+    border: 1px solid rgba(0, 247, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Efeito HOVER: O card "acende" */
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: var(--neon-blue);
+    /* Brilho intenso azul ao passar o mouse */
+    box-shadow: 0 0 30px rgba(0, 247, 255, 0.4), inset 0 0 20px rgba(0, 247, 255, 0.1);
+}
+
+.card-header {
+    background: rgba(0, 247, 255, 0.05); /* Azul muito transparente */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 247, 255, 0.1);
+}
+
+.card-header h2 {
+    font-size: 1.3rem;
+    margin: 0;
+    color: var(--neon-blue);
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(0, 247, 255, 0.5);
+}
+
+/* Tier Badge brilhante */
+.tier-badge {
+    background: transparent;
+    color: var(--neon-gold);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-family: 'Russo One', sans-serif;
+    border: 1px solid var(--neon-gold);
+    text-shadow: 0 0 10px var(--neon-gold);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+.card-body { padding: 20px; }
+
+.info-row {
+    margin-bottom: 15px;
+    color: var(--text-dim);
+    font-size: 1.1rem;
+}
+
+.info-row i {
+    color: var(--neon-blue);
+    margin-right: 10px;
+    text-shadow: 0 0 8px var(--neon-blue);
+}
+
+.unique-skill {
+    color: var(--neon-pink);
+    font-weight: bold;
+    text-shadow: 0 0 8px var(--neon-pink);
+}
+
+/* Grid de Stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.stat-item:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.stat-item i {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+}
+
+.stat-item strong {
+    display: block;
+    font-size: 1.4rem;
+    font-family: 'Russo One', sans-serif;
+}
+
+.stat-item small {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* Cores Específicas e Brilhos para cada Stat */
+.stat-spd i, .stat-spd strong { color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); }
+.stat-sta i, .stat-sta strong { color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-pink); }
+.stat-pow i, .stat-pow strong { color: var(--neon-gold); text-shadow: 0 0 10px var(--neon-gold); }
